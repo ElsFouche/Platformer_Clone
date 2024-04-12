@@ -11,7 +11,8 @@ public class TagManager : MonoBehaviour
         Player,
         Enemies,
         Bullet,
-        Pickup
+        Pickup,
+        Platform
     }
 
     public enum Bullet
