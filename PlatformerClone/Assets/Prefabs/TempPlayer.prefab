@@ -213,6 +213,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 99
+  enemyNormalDamage: 15
+  enemyStrongDamage: 35
+  iSeconds: 5
 --- !u!1 &7136884742796646741
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,8 +360,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 0.14818402, z: 1}
-  m_Center: {x: 0, y: 0.15742874, z: 0}
+  m_Size: {x: 1, y: 0.15, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8137191397904895915
 MonoBehaviour:
   m_ObjectHideFlags: 0
