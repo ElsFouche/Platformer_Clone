@@ -13,19 +13,11 @@ public class JumpController : MonoBehaviour
 {
     public bool isGrounded = true;
 
-    private int overlaps = 0;
-
-    // void Start() {
-    //     InvokeRepeating("CheckIfGrounded", 1.0f, 1.0f);
-    // }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.GetComponentInChildren<TagManager>() == null)
         {
             isGrounded = true;
-            overlaps++;
-            Debug.Log(overlaps);
         }
     }
 
@@ -34,12 +26,6 @@ public class JumpController : MonoBehaviour
         if (other.gameObject.GetComponentInChildren<TagManager>() == null)
         {
             isGrounded = false;
-            overlaps--;
-            Debug.Log(overlaps);
         }
     }
-
-    // private void CheckIfGrounded() {
-
-    // }
 }

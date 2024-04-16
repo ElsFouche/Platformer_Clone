@@ -6,7 +6,7 @@ public class MoveController : MonoBehaviour
 {
     public int speed;
     public float jumpForce = 10.0f;
-    public float gravityForce = 9.81f;
+    public bool facingLeft = false;
 
     private Rigidbody rb;
     private JumpController jumpController;
@@ -25,8 +25,6 @@ public class MoveController : MonoBehaviour
 
     void Update()
     {
-        // transform.position += Vector3.down * gravityForce * Time.deltaTime);
-
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (jumpController.isGrounded)
@@ -37,11 +35,13 @@ public class MoveController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.A))
         {
+            facingLeft = true;
             PlayerMove(Heading.GoingLeft);
         }
 
         if (Input.GetKey(KeyCode.D))
         {
+            facingLeft = false;
             PlayerMove(Heading.GoingRight);
         }
     }

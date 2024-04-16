@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /* Author:      Els Fouche'
  * Last Update: 04/11/2024
@@ -21,6 +22,7 @@ public class PlayerHealth : MonoBehaviour
         if (other.gameObject.GetComponent<TagManager>() != null)
         {
             TagManager tags = other.gameObject.GetComponent<TagManager>();
+            // Debug.Log(other);
             
             if (isImmune == false) {
                 if (tags.tagType == TagManager.Tags.Enemies)
@@ -30,10 +32,12 @@ public class PlayerHealth : MonoBehaviour
                         case TagManager.Enemies.Normal:
                             health -= 15;
                             StartCoroutine("Invulnerability");
+                            PlayerDamaged();
                             // TODO: Send new player health value to UI
                             break;
                         case TagManager.Enemies.Strong:
                             health -= 35;
+                            PlayerDamaged();
                             StartCoroutine("Invulnerability");
                             // TODO: Send new player health value to UI
                             break;
@@ -42,6 +46,14 @@ public class PlayerHealth : MonoBehaviour
                     }
                 }
             }
+        }
+    }
+
+    private void PlayerDamaged()
+    {
+        if (health <= 0)
+        {
+            SceneManager.LoadScene(5);
         }
     }
 
