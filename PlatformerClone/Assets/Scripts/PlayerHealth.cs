@@ -31,14 +31,20 @@ public class PlayerHealth : MonoBehaviour
                     {
                         case TagManager.Enemies.Normal:
                             health -= 15;
-                            StartCoroutine("Invulnerability");
+                            if (isImmune == false)
+                            {
+                                StartCoroutine("Invulnerability");
+                            }
                             PlayerDamaged();
                             // TODO: Send new player health value to UI
                             break;
                         case TagManager.Enemies.Strong:
                             health -= 35;
+                            if (isImmune == false)
+                            {
+                                StartCoroutine("Invulnerability");
+                            }
                             PlayerDamaged();
-                            StartCoroutine("Invulnerability");
                             // TODO: Send new player health value to UI
                             break;
                         default:
