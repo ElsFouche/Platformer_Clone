@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6539050293598075520}
   - component: {fileID: 254740104791193576}
   - component: {fileID: 4101645822671975901}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Greeble_SmallRect (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 5470931139470705609}
   - component: {fileID: 9029101016687620946}
   - component: {fileID: 1901854528517200595}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Beam_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 8239564094999935580}
   - component: {fileID: 3994393328424118434}
   - component: {fileID: 2124306681399479810}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tube (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -298,7 +298,7 @@ GameObject:
   - component: {fileID: 5702364462050491005}
   - component: {fileID: 4924336123886057559}
   - component: {fileID: 1428520374340802787}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Greeble_SmallRect (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -383,7 +383,7 @@ GameObject:
   - component: {fileID: 5913581279606777888}
   - component: {fileID: 7255347087814056123}
   - component: {fileID: 259338144928149818}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Beam_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -502,7 +502,7 @@ GameObject:
   - component: {fileID: 8883405578209732609}
   - component: {fileID: 2485539564792735081}
   - component: {fileID: 1809484920828618588}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Greeble_SmallRect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -585,7 +585,7 @@ GameObject:
   - component: {fileID: 6956778066349372490}
   - component: {fileID: 4160529549168736546}
   - component: {fileID: 207119912886074135}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Greeble_SmallRect (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -666,7 +666,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4864617910349847320}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BeamDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -725,7 +725,7 @@ GameObject:
   - component: {fileID: 2123581906098340702}
   - component: {fileID: 4921907864659562038}
   - component: {fileID: 9163942069133118467}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Greeble_SmallRect (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -809,7 +809,7 @@ GameObject:
   - component: {fileID: 4740731023908049377}
   - component: {fileID: 8838464205242405844}
   - component: {fileID: 8026472558366482705}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Door_Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -913,7 +913,7 @@ GameObject:
   - component: {fileID: 5218008057266482398}
   - component: {fileID: 235852874123457547}
   - component: {fileID: 7324403782255168089}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Greeble_SmallRect (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -996,7 +996,7 @@ GameObject:
   - component: {fileID: 1316612010831793764}
   - component: {fileID: 3921746832023835371}
   - component: {fileID: 2012525557127075619}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Greeble_SmallRect (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1079,7 +1079,7 @@ GameObject:
   - component: {fileID: 3074168894560990675}
   - component: {fileID: 252071870688576194}
   - component: {fileID: 121141356693319399}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tube (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1164,7 +1164,7 @@ GameObject:
   - component: {fileID: 1822955482019616181}
   - component: {fileID: 3453444191687779630}
   - component: {fileID: 5243430381526142127}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Beam_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1283,7 +1283,7 @@ GameObject:
   - component: {fileID: 1589535522805498483}
   - component: {fileID: 4142135575005805278}
   - component: {fileID: 7533359107846911241}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1366,7 +1366,7 @@ GameObject:
   - component: {fileID: 4053700031322494069}
   - component: {fileID: 4003946786948377986}
   - component: {fileID: 4250996694255070702}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1449,7 +1449,7 @@ GameObject:
   - component: {fileID: 7119912180335398683}
   - component: {fileID: 456914041693479484}
   - component: {fileID: 8557342735993009845}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Greeble_Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1532,7 +1532,7 @@ GameObject:
   - component: {fileID: 1671461594246441786}
   - component: {fileID: 8268197275233888616}
   - component: {fileID: 8454479097412612057}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tube (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1615,7 +1615,7 @@ GameObject:
   - component: {fileID: 3794117850500657079}
   - component: {fileID: 8188410625717705042}
   - component: {fileID: 8288913713905960986}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1698,7 +1698,7 @@ GameObject:
   - component: {fileID: 3730823184785716129}
   - component: {fileID: 4716397920837140163}
   - component: {fileID: 2737380053639033602}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1781,7 +1781,7 @@ GameObject:
   - component: {fileID: 3025947455865382215}
   - component: {fileID: 2599045691381393874}
   - component: {fileID: 7957987526342132649}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Greeble_SmallRect (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1864,7 +1864,7 @@ GameObject:
   - component: {fileID: 1052268594549518871}
   - component: {fileID: 3842854389302346930}
   - component: {fileID: 3524311218646806177}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1947,7 +1947,7 @@ GameObject:
   - component: {fileID: 5497548908075171084}
   - component: {fileID: 5232445579318126076}
   - component: {fileID: 591086711534742124}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tube (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2030,7 +2030,7 @@ GameObject:
   - component: {fileID: 3266204309922945439}
   - component: {fileID: 8387313144242033911}
   - component: {fileID: 5694596393273841346}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Greeble_BigRect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2114,7 +2114,7 @@ GameObject:
   - component: {fileID: 8159579378816515622}
   - component: {fileID: 5358821576067906579}
   - component: {fileID: 6887430777594285782}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Door_Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2218,7 +2218,7 @@ GameObject:
   - component: {fileID: 1682811350867995654}
   - component: {fileID: 2033643597176915334}
   - component: {fileID: 8251699716878476326}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Greeble_SmallRect (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2303,7 +2303,7 @@ GameObject:
   - component: {fileID: 3710481668416296077}
   - component: {fileID: 423107471247385622}
   - component: {fileID: 7130991614724885911}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Beam_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -6,11 +6,15 @@ public class MoveController : MonoBehaviour
 {
     public int speed;
     public float jumpForce = 10.0f;
+    public float jumpDelayTime = 0.4f;
     public bool facingLeft = false;
+    public Collider forwardCollider;
 
     private Rigidbody rb;
     private JumpController jumpController;
     private GameObject playerBody;
+    private MoveBlocked moveBlocked;
+    private bool playerJumped = false;
 
     private enum Heading
     {
@@ -24,26 +28,28 @@ public class MoveController : MonoBehaviour
         jumpController = gameObject.GetComponentInChildren<JumpController>();
         
         playerBody = GameObject.Find("Player_Mesh");
+        moveBlocked = gameObject.GetComponent<MoveBlocked>();
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (jumpController.isGrounded)
+            if (jumpController.isGrounded && !playerJumped)
             {
+                StartCoroutine("JumpDelay");
                 PlayerJump();
             }
         }
 
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) && !moveBlocked.IsRearBlocked())
         {
             facingLeft = true;
             PlayerMove(Heading.GoingLeft);
             playerBody.transform.rotation = Quaternion.Slerp(Quaternion.identity, new Quaternion(0.0f, 180.0f, 0.0f, 1.0f), 1.0f);
         }
 
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D) && !moveBlocked.IsFrontBlocked())
         {
             facingLeft = false;
             PlayerMove(Heading.GoingRight);
@@ -66,5 +72,11 @@ public class MoveController : MonoBehaviour
     private void PlayerJump()
     {
         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+    }
+
+    private IEnumerator JumpDelay() {
+        playerJumped = true;
+        yield return new WaitForSeconds(jumpDelayTime);
+        playerJumped = false;
     }
 }

@@ -12,20 +12,21 @@ using UnityEngine;
 public class JumpController : MonoBehaviour
 {
     public bool isGrounded = true;
+    public float coyoteTime = 0.1f;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponentInChildren<TagManager>() == null)
-        {
-            isGrounded = true;
-        }
+        isGrounded = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.GetComponentInChildren<TagManager>() == null)
-        {
-            isGrounded = false;
-        }
+        StartCoroutine("CoyoteTime");
+    }
+
+    private IEnumerator CoyoteTime() 
+    {
+        yield return new WaitForSeconds(coyoteTime);
+        isGrounded = false;
     }
 }
