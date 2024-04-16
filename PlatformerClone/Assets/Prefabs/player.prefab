@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 3954413047653289280}
   - component: {fileID: 7337469011657899041}
   m_Layer: 0
-  m_Name: Capsule (3)
+  m_Name: Arm_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -187,7 +187,7 @@ GameObject:
   - component: {fileID: 1802774971583773915}
   - component: {fileID: 8669637830579833360}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Visor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -430,7 +430,7 @@ GameObject:
   - component: {fileID: 647073078937043792}
   - component: {fileID: 6843692263897990936}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Arm_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -513,7 +513,7 @@ GameObject:
   - component: {fileID: 6446074435824604767}
   - component: {fileID: 5032223162367209548}
   m_Layer: 0
-  m_Name: player
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -596,7 +596,7 @@ GameObject:
   - component: {fileID: 6576105818971986891}
   - component: {fileID: 7090128548780019827}
   m_Layer: 0
-  m_Name: Capsule (1)
+  m_Name: Blaster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -788,7 +788,7 @@ GameObject:
   - component: {fileID: 2341563218084866773}
   - component: {fileID: 4402871739560610857}
   m_Layer: 0
-  m_Name: player
+  m_Name: Player_Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -977,7 +977,7 @@ GameObject:
   - component: {fileID: 6726755933899570337}
   - component: {fileID: 6648222231759142905}
   m_Layer: 0
-  m_Name: Sphere (1)
+  m_Name: Elbow_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1060,7 +1060,7 @@ GameObject:
   - component: {fileID: 8547628341519485019}
   - component: {fileID: 1082514227904538685}
   m_Layer: 0
-  m_Name: player (1)
+  m_Name: Backpack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

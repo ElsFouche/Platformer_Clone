@@ -22,34 +22,29 @@ public class PlayerHealth : MonoBehaviour
         if (other.gameObject.GetComponent<TagManager>() != null)
         {
             TagManager tags = other.gameObject.GetComponent<TagManager>();
-            // Debug.Log(other);
             
-            if (isImmune == false) {
-                if (tags.tagType == TagManager.Tags.Enemies)
+            if (tags.tagType == TagManager.Tags.Enemies && isImmune == false)
+            {
+                switch(tags.enemyType) 
                 {
-                    switch(tags.enemyType) 
-                    {
-                        case TagManager.Enemies.Normal:
-                            health -= 15;
-                            if (isImmune == false)
-                            {
-                                StartCoroutine("Invulnerability");
-                            }
-                            PlayerDamaged();
-                            // TODO: Send new player health value to UI
-                            break;
-                        case TagManager.Enemies.Strong:
-                            health -= 35;
-                            if (isImmune == false)
-                            {
-                                StartCoroutine("Invulnerability");
-                            }
-                            PlayerDamaged();
-                            // TODO: Send new player health value to UI
-                            break;
-                        default:
-                            break;
-                    }
+                    case TagManager.Enemies.Normal:
+                        health -= 15;
+                        if (isImmune == false)
+                        {
+                            StartCoroutine("Invulnerability");
+                        }
+                        PlayerDamaged();
+                        break;
+                    case TagManager.Enemies.Strong:
+                        health -= 35;
+                        if (isImmune == false)
+                        {
+                            StartCoroutine("Invulnerability");
+                        }
+                        PlayerDamaged();
+                        break;
+                    default:
+                        break;
                 }
             }
         }
