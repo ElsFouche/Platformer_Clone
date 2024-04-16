@@ -5,7 +5,6 @@ using UnityEngine;
 public class NormalBullet : MonoBehaviour
 {
     public bool goingLeft;
-    public bool goingRight;
 
     public float speed = 15;
     public float despawnTime;
