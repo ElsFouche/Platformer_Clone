@@ -10,4 +10,6 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     // when shoot, check MoveController.facingLeft. If true, instantiate bullet with facingLeft = true, else false. 
+
+
 }

@@ -10,6 +10,7 @@ public class MoveController : MonoBehaviour
 
     private Rigidbody rb;
     private JumpController jumpController;
+    private GameObject playerBody;
 
     private enum Heading
     {
@@ -21,6 +22,8 @@ public class MoveController : MonoBehaviour
     {
         rb = gameObject.GetComponentInChildren<Rigidbody>();
         jumpController = gameObject.GetComponentInChildren<JumpController>();
+        
+        playerBody = GameObject.Find("Player_Mesh");
     }
 
     void Update()
@@ -37,12 +40,14 @@ public class MoveController : MonoBehaviour
         {
             facingLeft = true;
             PlayerMove(Heading.GoingLeft);
+            playerBody.transform.rotation = Quaternion.Slerp(Quaternion.identity, new Quaternion(0.0f, 180.0f, 0.0f, 1.0f), 1.0f);
         }
 
         if (Input.GetKey(KeyCode.D))
         {
             facingLeft = false;
             PlayerMove(Heading.GoingRight);
+            playerBody.transform.rotation = Quaternion.Slerp(Quaternion.identity, new Quaternion(0.0f, 0.0f, 0.0f, 1.0f), 1.0f);
         }
     }
 
