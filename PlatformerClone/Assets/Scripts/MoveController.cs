@@ -6,7 +6,9 @@ public class MoveController : MonoBehaviour
 {
     public int speed;
     public float jumpForce = 10.0f;
+    public float dragForce = 5.0f;
     public float jumpDelayTime = 0.4f;
+    public float minJumpTime = 0.2f;
     public bool facingLeft = false;
     public Collider forwardCollider;
 
@@ -15,6 +17,7 @@ public class MoveController : MonoBehaviour
     private GameObject playerBody;
     private MoveBlocked moveBlocked;
     private bool playerJumped = false;
+    private bool minJumpReached = false;
 
     private enum Heading
     {
@@ -39,7 +42,13 @@ public class MoveController : MonoBehaviour
             {
                 StartCoroutine("JumpDelay");
                 PlayerJump();
+                StartCoroutine("MinJumpTime");
             }
+        }
+
+        if (!Input.GetKey(KeyCode.Space) && minJumpReached && !jumpController.isGrounded)
+        {
+            PlayerJumpDrag();
         }
 
         if (Input.GetKey(KeyCode.A) && !moveBlocked.IsRearBlocked())
@@ -74,9 +83,21 @@ public class MoveController : MonoBehaviour
         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
 
+    private void PlayerJumpDrag() 
+    {
+        rb.AddForce(Vector3.down * dragForce, ForceMode.Impulse);
+    }
+
     private IEnumerator JumpDelay() {
         playerJumped = true;
         yield return new WaitForSeconds(jumpDelayTime);
         playerJumped = false;
+    }
+
+    private IEnumerator MinJumpTime() 
+    {
+        minJumpReached = false;
+        yield return new WaitForSeconds(minJumpTime);
+        minJumpReached = true;
     }
 }

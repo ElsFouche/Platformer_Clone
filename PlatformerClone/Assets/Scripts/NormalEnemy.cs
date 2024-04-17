@@ -35,7 +35,6 @@ public class NormalEnemy : MonoBehaviour
     {
         if (other.gameObject.GetComponent<TagManager>() != null)
         {
-            Debug.Log(other.gameObject);
             TagManager otherTag = other.gameObject.GetComponent<TagManager>();
 
             // Checks if enemy collides with a bullet, destroys enemy after one hit

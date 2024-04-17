@@ -14,7 +14,7 @@ public class PlayerHealth : MonoBehaviour
     public int enemyNormalDamage = 15;
     public int enemyStrongDamage = 35;
     public int iSeconds = 5;            // Invulnerability time
-
+    public float blinkSpeed = 0.5f;
     private bool isImmune = false;
 
     private void OnTriggerEnter(Collider other)
@@ -28,20 +28,10 @@ public class PlayerHealth : MonoBehaviour
                 switch(tags.enemyType) 
                 {
                     case TagManager.Enemies.Normal:
-                        health -= 15;
-                        if (isImmune == false)
-                        {
-                            StartCoroutine("Invulnerability");
-                        }
-                        PlayerDamaged();
+                        PlayerDamaged(enemyNormalDamage);
                         break;
                     case TagManager.Enemies.Strong:
-                        health -= 35;
-                        if (isImmune == false)
-                        {
-                            StartCoroutine("Invulnerability");
-                        }
-                        PlayerDamaged();
+                        PlayerDamaged(enemyStrongDamage);
                         break;
                     default:
                         break;
@@ -50,8 +40,15 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    private void PlayerDamaged()
+    private void PlayerDamaged(int damage)
     {
+        if (!isImmune) 
+        {
+            health -= damage;
+            StartCoroutine("Invulnerability");
+            StartCoroutine("DamagedBlinking");
+        }
+
         if (health <= 0)
         {
             SceneManager.LoadScene(5);
@@ -62,5 +59,31 @@ public class PlayerHealth : MonoBehaviour
         isImmune = true;
         yield return new WaitForSeconds(iSeconds);
         isImmune = false;
+    }
+
+    private IEnumerator DamagedBlinking()
+    {
+        DamageBlink();
+        for (int i = 0; i < (iSeconds/blinkSpeed - 1); i++) 
+        {
+            yield return new WaitForSeconds(blinkSpeed);
+            DamageBlink();
+        }
+    }
+
+    private void DamageBlink()
+    {
+        foreach(Transform child in gameObject.transform)
+        {
+            child.GetComponent<MeshRenderer>().enabled = !child.GetComponent<MeshRenderer>().enabled;
+        }
+    }
+
+    void Start()
+    {
+        foreach(Transform child in gameObject.transform)
+        {
+            Debug.Log(child.transform.name);
+        }
     }
 }
