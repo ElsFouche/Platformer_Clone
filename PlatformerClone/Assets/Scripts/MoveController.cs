@@ -36,7 +36,7 @@ public class MoveController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             if (jumpController.isGrounded && !playerJumped)
             {
@@ -46,7 +46,7 @@ public class MoveController : MonoBehaviour
             }
         }
 
-        if (!Input.GetKey(KeyCode.Space) && minJumpReached && !jumpController.isGrounded)
+        if (!Input.GetKey(KeyCode.W) && minJumpReached && !jumpController.isGrounded)
         {
             PlayerJumpDrag();
         }
