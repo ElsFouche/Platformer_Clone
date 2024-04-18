@@ -799,8 +799,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c66a5bff66a90d94f8b4cf786946326e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalBullet: {fileID: 0}
-  shootPoint: {fileID: 0}
+  normalBullet: {fileID: 2762461433911890085, guid: 5ee0b3019b10ce74fb50b63d7d0c4b21, type: 3}
+  shootPoint: {fileID: 5301041827830466305}
+  bulletDelay: 2
 --- !u!114 &8752455827000774500
 MonoBehaviour:
   m_ObjectHideFlags: 0
