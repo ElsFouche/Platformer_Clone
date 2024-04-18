@@ -1,18 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+/*
+ * Symon Belcher
+ * 4/18/2024
+ * health pickup script
+ */
+
 
 public class HealthPickup : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerEnter(Collider other)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (other.gameObject)
+        {
+            Destroy(gameObject);
+        }
     }
 }

@@ -13,6 +13,7 @@ public class PlayerHealth : MonoBehaviour
     public int health = 99;
     public int enemyNormalDamage = 15;
     public int enemyStrongDamage = 35;
+    public int healthPickUp = 0;
     public int iSeconds = 5;            // Invulnerability time
     public float blinkSpeed = 0.5f;
     private bool isImmune = false;
@@ -37,6 +38,16 @@ public class PlayerHealth : MonoBehaviour
                         break;
                 }
             }
+            if(tags.tagType == TagManager.Tags.Pickup)
+            {
+                switch (tags.pickupType)
+                {
+                    case TagManager.Pickups.Health:
+                        HealthUp(health); 
+                        break;
+                }
+            }
+
         }
     }
 
@@ -54,6 +65,11 @@ public class PlayerHealth : MonoBehaviour
             SceneManager.LoadScene(5);
         }
     }
+    private void HealthUp(int heal)
+    {
+        health += heal;
+    }
+
 
     private IEnumerator Invulnerability() {
         isImmune = true;
@@ -79,11 +95,5 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        foreach(Transform child in gameObject.transform)
-        {
-            Debug.Log(child.transform.name);
-        }
-    }
+
 }

@@ -324,6 +324,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6791890061529042600}
+  - component: {fileID: 5136017848174498104}
+  - component: {fileID: -3002151466203636974}
   m_Layer: 0
   m_Name: TempHealthPickUp
   m_TagString: Untagged
@@ -349,3 +351,31 @@ Transform:
   - {fileID: 6597330459453316622}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5136017848174498104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8461136290418605557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6e8c966f8d8e764f828f63785024455, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagType: 0
+  bulletType: 0
+  enemyType: 0
+  pickupType: 1
+--- !u!114 &-3002151466203636974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8461136290418605557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c83c6bbf54ce2c4aaea8d94e804002e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
