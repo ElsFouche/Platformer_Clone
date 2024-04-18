@@ -33,7 +33,8 @@ public class TagManager : MonoBehaviour
     public enum Pickups
     {
         None,
-        Health
+        Health,
+        Jump
     }
 
     

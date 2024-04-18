@@ -6,6 +6,7 @@ public class MoveController : MonoBehaviour
 {
     public int speed;
     public float jumpForce = 10.0f;
+    public float jumpPowerup = 3.0f;
     public float dragForce = 5.0f;
     public float jumpDelayTime = 0.4f;
     public float minJumpTime = 0.2f;
@@ -16,6 +17,7 @@ public class MoveController : MonoBehaviour
     private JumpController jumpController;
     private GameObject playerBody;
     private MoveBlocked moveBlocked;
+    private PlayerController playerController;
     private bool playerJumped = false;
     private bool minJumpReached = false;
 
@@ -32,6 +34,8 @@ public class MoveController : MonoBehaviour
         
         playerBody = GameObject.Find("Player_Mesh");
         moveBlocked = gameObject.GetComponent<MoveBlocked>();
+
+        playerController = gameObject.GetComponent<PlayerController>();
     }
 
     void Update()
@@ -81,6 +85,10 @@ public class MoveController : MonoBehaviour
     private void PlayerJump()
     {
         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        if (playerController.jumpPowerup)
+        {
+            rb.AddForce(Vector3.up * jumpPowerup, ForceMode.Impulse);
+        }
     }
 
     private void PlayerJumpDrag() 

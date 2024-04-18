@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/* Author:      Els Fouché
- * Last Update: 04/11/2024
- * Notes:       This script contains the logic for player health, etc. 
+/* Author:      Els Fouché & Symon Belcher
+ * Last Update: 04/18/2024
+ * Notes:       
  */
 
 public class PlayerController : MonoBehaviour
@@ -13,15 +13,21 @@ public class PlayerController : MonoBehaviour
     public GameObject shootPoint;
     public float bulletDelay = 2;
 
+
     private MoveController moveController;
     private bool hasShots = false;
+    public bool jumpPowerup = false;
+    public bool shotPowerup = false;
+    public bool healthPowerup = false;
 
     // when shoot, check MoveController.facingLeft. If true, instantiate bullet with facingLeft = true, else false. 
 
     private void Start()
     {
+        DontDestroyOnLoad(gameObject);
         moveController = gameObject.GetComponent<MoveController>();
     }
+
     private void Update()
     {
         if (Input.GetKey(KeyCode.Space) && !hasShots)
@@ -47,7 +53,4 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(bulletDelay);
         hasShots = false;
     }
-    
-
-   
 }
