@@ -30,7 +30,16 @@ public class TagManager : MonoBehaviour
         Strong
     }
 
+    public enum Pickups
+    {
+        None,
+        Health
+    }
+
+    
+
     public Tags tagType;
     public Bullet bulletType;
     public Enemies enemyType;
+    public Pickups pickupType;
 }
