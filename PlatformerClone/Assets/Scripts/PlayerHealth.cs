@@ -43,10 +43,17 @@ public class PlayerHealth : MonoBehaviour
                 switch (tags.pickupType)
                 {
                     case TagManager.Pickups.Health:
-                        HealthUp(healthUp); 
+                        HealthUp();
                         break;
                 }
+                
             }
+            if (other.gameObject.tag == "firstaid")
+            {
+                health += 5;
+                Destroy(other.gameObject);
+            }
+
 
         }
     }
@@ -65,9 +72,9 @@ public class PlayerHealth : MonoBehaviour
             SceneManager.LoadScene(5);
         }
     }
-    private void HealthUp(int heal)
+    private void HealthUp()
     {
-        health += heal; 
+       health++; 
     }
 
 
