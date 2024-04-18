@@ -13,7 +13,7 @@ public class PlayerHealth : MonoBehaviour
     public int health = 99;
     public int enemyNormalDamage = 15;
     public int enemyStrongDamage = 35;
-    public int healthPickUp = 0;
+    public int healthUp = 0;
     public int iSeconds = 5;            // Invulnerability time
     public float blinkSpeed = 0.5f;
     private bool isImmune = false;
@@ -43,7 +43,7 @@ public class PlayerHealth : MonoBehaviour
                 switch (tags.pickupType)
                 {
                     case TagManager.Pickups.Health:
-                        HealthUp(health); 
+                        HealthUp(healthUp); 
                         break;
                 }
             }
@@ -67,7 +67,7 @@ public class PlayerHealth : MonoBehaviour
     }
     private void HealthUp(int heal)
     {
-        health += heal;
+        health += heal; 
     }
 
 
