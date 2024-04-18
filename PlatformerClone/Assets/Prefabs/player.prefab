@@ -799,6 +799,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c66a5bff66a90d94f8b4cf786946326e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  normalBullet: {fileID: 0}
+  shootPoint: {fileID: 0}
 --- !u!114 &8752455827000774500
 MonoBehaviour:
   m_ObjectHideFlags: 0

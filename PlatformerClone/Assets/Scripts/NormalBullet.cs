@@ -28,14 +28,19 @@ public class NormalBullet : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        
+
         if (other.gameObject.GetComponent<TagManager>() != null)
         {
-            if (other.gameObject.GetComponent<TagManager.Enemies>() != TagManager.Enemies.None)
+            TagManager tags = other.gameObject.GetComponent<TagManager>();
+
+            if (tags.enemyType != TagManager.Enemies.None)
             {
-                Destroy(gameObject);
+                Destroy(other.gameObject);
             }
         }
 
+        Destroy(gameObject);
     }
     private IEnumerator DespawnTimer(float time)
     {
