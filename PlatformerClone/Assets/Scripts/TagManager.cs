@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class TagManager : MonoBehaviour
 {
-
     public enum Tags
     {
         None,
@@ -36,8 +35,6 @@ public class TagManager : MonoBehaviour
         Health,
         Jump
     }
-
-    
 
     public Tags tagType;
     public Bullet bulletType;

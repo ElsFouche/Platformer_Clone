@@ -27,6 +27,9 @@ public class MoveController : MonoBehaviour
         GoingRight
     }
 
+    /// <summary>
+    /// This code assigns the components necessary for movement to variables. 
+    /// </summary>
     void Start()
     {
         rb = gameObject.GetComponentInChildren<Rigidbody>();
@@ -38,6 +41,10 @@ public class MoveController : MonoBehaviour
         playerController = gameObject.GetComponent<PlayerController>();
     }
 
+    /// <summary>
+    /// Movement code. Checks for key presses to determine player movement.
+    /// Utilizes slerp to rotate player body to face movement direction. 
+    /// </summary>
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.W))
@@ -70,6 +77,12 @@ public class MoveController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Handles lateral player movement.
+    /// This code should be refactored to be physics based to conform to 
+    /// the rest of the player's movement patterns. 
+    /// </summary>
+    /// <param name="direction"></param>
     private void PlayerMove(Heading direction)
     {
         if (direction == Heading.GoingLeft)
@@ -82,26 +95,45 @@ public class MoveController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Adds force to the player to initiate a jump. If the player has the
+    /// jump powerup unlocked, additional force is added to the jump. 
+    /// </summary>
     private void PlayerJump()
     {
-        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-        if (playerController.jumpPowerup)
+        if (!playerController.jumpPowerup)
         {
-            rb.AddForce(Vector3.up * jumpPowerup, ForceMode.Impulse);
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        } else
+        {
+            rb.AddForce(Vector3.up * (jumpForce + jumpPowerup), ForceMode.Impulse);
         }
     }
 
+    /// <summary>
+    /// This code adds downforce to the character if the player has released the
+    /// jump button and a minimum amount of time has passed. 
+    /// </summary>
     private void PlayerJumpDrag() 
     {
         rb.AddForce(Vector3.down * dragForce, ForceMode.Impulse);
     }
 
+    /// <summary>
+    /// This code determines whether enough time has elapsed for
+    /// the player to be able to jump again. 
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator JumpDelay() {
         playerJumped = true;
         yield return new WaitForSeconds(jumpDelayTime);
         playerJumped = false;
     }
 
+    /// <summary>
+    /// This code 
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator MinJumpTime() 
     {
         minJumpReached = false;
