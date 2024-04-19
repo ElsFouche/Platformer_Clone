@@ -1,7 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+ * Symon Belcher
+ * 4/19/2024
+ * Script for the normal bullet, controlls its movments and destroys enemies
+ */
 public class NormalBullet : MonoBehaviour
 {
     public bool goingLeft;
@@ -17,7 +21,7 @@ public class NormalBullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (goingLeft)
+        if (goingLeft)// determines if bullet ia going left, if not, moves it right
         {
             transform.Translate(Vector3.left * speed * Time.deltaTime);
         }
@@ -30,7 +34,7 @@ public class NormalBullet : MonoBehaviour
     {
         
 
-        if (other.gameObject.GetComponent<TagManager>() != null)
+        if (other.gameObject.GetComponent<TagManager>() != null)// destroys the enemy when it touches one
         {
             TagManager tags = other.gameObject.GetComponent<TagManager>();
 
@@ -42,7 +46,7 @@ public class NormalBullet : MonoBehaviour
 
         Destroy(gameObject);
     }
-    private IEnumerator DespawnTimer(float time)
+    private IEnumerator DespawnTimer(float time) // despawns the bullet
     {
 
         yield return new WaitForSeconds(time);
