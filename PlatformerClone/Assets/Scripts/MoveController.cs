@@ -131,7 +131,9 @@ public class MoveController : MonoBehaviour
     }
 
     /// <summary>
-    /// This code 
+    /// This code handles the minimum jump time for the player.
+    /// Currently this code only changes the minimum jump height
+    /// if the value for minJumpTime is greater than coyotetime. 
     /// </summary>
     /// <returns></returns>
     private IEnumerator MinJumpTime() 

@@ -12,6 +12,25 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    public GameObject player;
+    private EndScene sceneTransition;
 
+    public GameObject[] spawnPoints;
 
+    private void Start()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
+    public void TeleportPlayer(Vector3 destination, int sceneIndex = -1)
+    {
+        player.transform.parent.transform.position = destination;
+        Debug.Log(destination);
+        Debug.Log("Player location: " + player.transform.position);
+
+        if (sceneIndex != -1)
+        {
+            sceneTransition.SwitchScene(sceneIndex);
+        }
+    }
 }
