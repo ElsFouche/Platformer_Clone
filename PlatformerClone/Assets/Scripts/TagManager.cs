@@ -33,7 +33,9 @@ public class TagManager : MonoBehaviour
     {
         None,
         Health,
-        Jump
+        Jump,
+        HealthMax,
+        SuperMissile
     }
 
     public Tags tagType;

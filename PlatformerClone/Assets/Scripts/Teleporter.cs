@@ -4,16 +4,12 @@ using UnityEngine;
 
 public class Teleporter : MonoBehaviour
 {
+    [Tooltip("Required: Set in prefab to use GameController prefab!")]
     public GameController gameController;
+    [Tooltip("Optional. If blank, uses the level index to determine target location.")]
     public GameObject teleportDestination;
+    [Tooltip("Optional. If -1, uses the manually set teleport destination.")]
     public int levelIndex = -1;
-
-    private Vector3 endPos;
-
-    private void Start()
-    {
-        endPos = teleportDestination.transform.position;
-    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -25,8 +21,19 @@ public class Teleporter : MonoBehaviour
             {
                 Debug.Log(tags.tagType);
                 gameController.player = other.gameObject;
-                gameController.TeleportPlayer(endPos, levelIndex);
+                TeleportPlayerIf();
             }
+        }
+    }
+
+    private void TeleportPlayerIf()
+    {
+        if (teleportDestination != null)
+        {
+            gameController.TeleportPlayer(teleportDestination.transform.position);
+        } else if (levelIndex != -1)
+        {
+            gameController.TeleportPlayer(levelIndex);
         }
     }
 }

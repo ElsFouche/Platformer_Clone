@@ -51,6 +51,15 @@ public class PlayerCollisionListener : MonoBehaviour
                         playerController.jumpPowerup = true;
                         Destroy(other.gameObject);
                         break;
+                    case TagManager.Pickups.SuperMissile:
+                        if (playerController.superMissiles > playerController.maxSuperMissiles - playerController.superMissilePickupCount)
+                        {
+                            playerController.superMissiles += playerController.maxSuperMissiles - playerController.superMissiles;
+                        } else
+                        {
+                            playerController.superMissiles += playerController.superMissilePickupCount;
+                        }
+                        break;
                     default:
                         break;
                 }

@@ -403,8 +403,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6678221615003459350}
-  - component: {fileID: 6377342374110039308}
   - component: {fileID: -6412345304125809971}
+  - component: {fileID: 6377342374110039308}
+  - component: {fileID: 3513064655508159039}
   - component: {fileID: 7326125123903428761}
   - component: {fileID: 6695984526288919002}
   - component: {fileID: 6640160470018231407}
@@ -440,6 +441,22 @@ Transform:
   - {fileID: 4617607573022777317}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-6412345304125809971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5819673738621094583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6e8c966f8d8e764f828f63785024455, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagType: 2
+  bulletType: 0
+  enemyType: 1
+  pickupType: 0
 --- !u!114 &6377342374110039308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -456,7 +473,7 @@ MonoBehaviour:
   leftPoint: {fileID: 5232207343402702919}
   rightPoint: {fileID: 570959836901240022}
   movingLeft: 0
---- !u!114 &-6412345304125809971
+--- !u!114 &3513064655508159039
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -465,12 +482,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5819673738621094583}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6e8c966f8d8e764f828f63785024455, type: 3}
+  m_Script: {fileID: 11500000, guid: a35186e17aa38a445bebc324df1812da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagType: 2
-  bulletType: 0
-  enemyType: 1
+  health: 1
+  damagedBlinkSpeed: 0.25
+  damagedBlinkTime: 1
 --- !u!65 &7326125123903428761
 BoxCollider:
   m_ObjectHideFlags: 0

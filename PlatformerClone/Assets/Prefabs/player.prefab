@@ -346,6 +346,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.37, y: 0.11, z: 1}
   m_Center: {x: 0.36, y: 1.96, z: 0}
+--- !u!1 &2937086331651040280
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7306833891132972047}
+  m_Layer: 0
+  m_Name: ShootPointLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7306833891132972047
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2937086331651040280}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.197, y: 0.751, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 705117075694594390}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4231476796577038370
 GameObject:
   m_ObjectHideFlags: 0
@@ -754,6 +785,7 @@ Transform:
   - {fileID: 9126225682957259240}
   - {fileID: 5066298199020503745}
   - {fileID: 9033828939244358912}
+  - {fileID: 7306833891132972047}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4626262869198793789
@@ -801,8 +833,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   normalBullet: {fileID: 2762461433911890085, guid: 5ee0b3019b10ce74fb50b63d7d0c4b21, type: 3}
+  strongBullet: {fileID: 5617511736413761949, guid: bfce045898a6077479aec6cd13ec7d2a, type: 3}
+  superMissile: {fileID: 7917503164582351748, guid: 2d65a845b0dbab34f96a7fa3794e83d9, type: 3}
   shootPoint: {fileID: 5301041827830466305}
+  shootPointLeft: {fileID: 2937086331651040280}
   bulletDelay: 2
+  superMissiles: 0
+  superMissilePickupCount: 5
+  maxSuperMissiles: 50
   jumpPowerup: 0
   shotPowerup: 0
   healthPowerup: 0

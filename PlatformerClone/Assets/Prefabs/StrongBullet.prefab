@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6054349656238709047}
   - component: {fileID: 4728053193728232443}
   - component: {fileID: 3305173015628277173}
-  - component: {fileID: 4023960348324111055}
   m_Layer: 0
   m_Name: StrongBullet (1)
   m_TagString: Untagged
@@ -84,27 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &4023960348324111055
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5128217367908744617}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5617511736413761949
 GameObject:
   m_ObjectHideFlags: 0
@@ -116,7 +94,9 @@ GameObject:
   - component: {fileID: 3246752748827182520}
   - component: {fileID: 3279906799538456239}
   - component: {fileID: 1834701414006165092}
-  - component: {fileID: 3151897009421330375}
+  - component: {fileID: 6641089422163672858}
+  - component: {fileID: 292359516234512314}
+  - component: {fileID: 5476021266086837093}
   m_Layer: 0
   m_Name: StrongBullet
   m_TagString: Untagged
@@ -190,8 +170,39 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &3151897009421330375
-SphereCollider:
+--- !u!114 &6641089422163672858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5617511736413761949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 955de7ac3bbcbd84188f7c71331f4b72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 15
+  damage: 3
+  despawnTime: 5
+--- !u!114 &292359516234512314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5617511736413761949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6e8c966f8d8e764f828f63785024455, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagType: 3
+  bulletType: 2
+  enemyType: 0
+  pickupType: 0
+--- !u!136 &5476021266086837093
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -205,9 +216,11 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
+  serializedVersion: 2
+  m_Radius: 0.49999997
+  m_Height: 0.99999994
+  m_Direction: 0
   m_Center: {x: 0, y: 0, z: 0}

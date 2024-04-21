@@ -22,15 +22,34 @@ public class GameController : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void TeleportPlayer(Vector3 destination, int sceneIndex = -1)
+    public void TeleportPlayer(int sceneIndex = -1)
     {
-        player.transform.parent.transform.position = destination;
-        Debug.Log(destination);
-        Debug.Log("Player location: " + player.transform.position);
+        Debug.Log("Teleport destination: " + spawnPoints[sceneIndex].transform.position);
+        Debug.Log("Player location after teleport: " + player.transform.position);
 
         if (sceneIndex != -1)
         {
+            player = GetTopParent(player);
             sceneTransition.SwitchScene(sceneIndex);
+            player.transform.position = spawnPoints[sceneIndex].transform.position;
         }
+    }
+
+    public void TeleportPlayer(Vector3 destination)
+    {
+        player = GetTopParent(player);
+        player.transform.position = destination;
+        Debug.Log("Teleport destination: " + destination);
+        Debug.Log("Player location after teleport: " + player.transform.position);
+    }
+
+    private GameObject GetTopParent(GameObject inObject)
+    {
+        while (inObject.transform.parent != null)
+        {
+            inObject = inObject.transform.parent.gameObject;
+        }
+
+        return inObject;
     }
 }

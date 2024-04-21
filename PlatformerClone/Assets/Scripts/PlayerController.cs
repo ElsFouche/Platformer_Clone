@@ -10,8 +10,14 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public GameObject normalBullet;
+    public GameObject strongBullet;
+    public GameObject superMissile;
     public GameObject shootPoint;
+    public GameObject shootPointLeft;
     public float bulletDelay = 2;
+    public int superMissiles = 0;
+    public int superMissilePickupCount = 5;
+    public int maxSuperMissiles = 50;
 
 
     private MoveController moveController;
@@ -33,16 +39,22 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && !hasShots)
         {
             StartCoroutine("shootDelay");
-            if (moveController.facingLeft)
+            if (shotPowerup)
             {
-              GameObject weakBullet = Instantiate(normalBullet, shootPoint.transform.position + new Vector3(-2.394f,0,0), Quaternion.identity);
-              weakBullet.GetComponent<NormalBullet>().goingLeft = moveController.facingLeft;
-                
+                ShootBullet(strongBullet);
+            } else
+            {
+                ShootBullet(normalBullet);
             }
-            else
+        }
+
+        if (Input.GetKey(KeyCode.LeftShift) && !hasShots)
+        {
+            StartCoroutine("shootDelay");
+            if (superMissiles > 0)
             {
-                GameObject weakBullet = Instantiate(normalBullet, shootPoint.transform.position, Quaternion.identity);
-                weakBullet.GetComponent<NormalBullet>().goingLeft = moveController.facingLeft;
+                superMissiles -= 1;
+                ShootBullet(superMissile);
             }
         }
     }
@@ -52,5 +64,18 @@ public class PlayerController : MonoBehaviour
         hasShots = true;
         yield return new WaitForSeconds(bulletDelay);
         hasShots = false;
+    }
+
+    private void ShootBullet(GameObject bullet)
+    {
+        if (moveController.facingLeft)
+        {
+            GameObject shotBullet = Instantiate(bullet, shootPointLeft.transform.position, Quaternion.identity);
+            shotBullet.transform.rotation = Quaternion.Slerp(Quaternion.identity, new Quaternion(0.0f, 180.0f, 0.0f, 1.0f), 1.0f);
+        }
+        else
+        {
+            GameObject shotBullet = Instantiate(bullet, shootPoint.transform.position, Quaternion.identity);
+        }
     }
 }

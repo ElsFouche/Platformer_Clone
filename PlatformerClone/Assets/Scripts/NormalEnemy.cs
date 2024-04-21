@@ -47,7 +47,6 @@ public class NormalEnemy : MonoBehaviour
     }
 
     private void Move()
-
     {
         Vector3 moveDir;
 

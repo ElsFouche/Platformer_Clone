@@ -16,7 +16,7 @@ using UnityEngine.SceneManagement;
         public void QuiteGame() // exits game
         {
 
-            print("quite game");
+            // print("quite game");
             Application.Quit();
         }
 
