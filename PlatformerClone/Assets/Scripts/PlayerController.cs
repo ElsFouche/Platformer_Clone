@@ -26,8 +26,6 @@ public class PlayerController : MonoBehaviour
     public bool shotPowerup = false;
     public bool healthPowerup = false;
 
-    // when shoot, check MoveController.facingLeft. If true, instantiate bullet with facingLeft = true, else false. 
-
     private void Start()
     {
         DontDestroyOnLoad(gameObject);

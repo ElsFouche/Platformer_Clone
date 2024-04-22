@@ -67,6 +67,15 @@ public class MoveController : MonoBehaviour
             facingLeft = true;
             PlayerMove(Heading.GoingLeft);
             playerBody.transform.rotation = Quaternion.Slerp(Quaternion.identity, new Quaternion(0.0f, 180.0f, 0.0f, 1.0f), 1.0f);
+        } 
+        
+        if (Input.GetKeyUp(KeyCode.A) && moveBlocked.IsRearBlocked())
+        {
+            RaycastHit hit;
+            if (!Physics.Raycast(transform.position, Vector3.left, out hit, 2.0f))
+            {
+                moveBlocked.SetRearBlocked(false);
+            }
         }
 
         if (Input.GetKey(KeyCode.D) && !moveBlocked.IsFrontBlocked())
@@ -74,6 +83,13 @@ public class MoveController : MonoBehaviour
             facingLeft = false;
             PlayerMove(Heading.GoingRight);
             playerBody.transform.rotation = Quaternion.Slerp(Quaternion.identity, new Quaternion(0.0f, 0.0f, 0.0f, 1.0f), 1.0f);
+        } else if (Input.GetKeyUp(KeyCode.D) && moveBlocked.IsFrontBlocked())
+        {
+            RaycastHit hit;
+            if (!Physics.Raycast(transform.position, Vector3.right, out hit, 2.0f))
+            {
+                moveBlocked.SetFrontBlocked(false);
+            }
         }
     }
 

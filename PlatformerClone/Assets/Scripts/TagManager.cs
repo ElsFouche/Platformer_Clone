@@ -35,7 +35,8 @@ public class TagManager : MonoBehaviour
         Health,
         Jump,
         HealthMax,
-        SuperMissile
+        SuperMissile,
+        StrongBullet
     }
 
     public Tags tagType;

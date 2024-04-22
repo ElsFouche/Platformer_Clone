@@ -17,4 +17,9 @@ public class FrontBlocked : MonoBehaviour
     public bool IsFrontBlocked() {
         return isFrontBlocked;
     }
+
+    public void SetFrontBlocked(bool frontBlocked)
+    {
+        isFrontBlocked = frontBlocked;
+    }
 }

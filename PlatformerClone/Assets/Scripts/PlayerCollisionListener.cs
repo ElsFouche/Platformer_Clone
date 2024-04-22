@@ -47,8 +47,17 @@ public class PlayerCollisionListener : MonoBehaviour
                         playerHealth.HealthUp();
                         Destroy(other.gameObject);
                         break;
+                    case TagManager.Pickups.HealthMax:
+                        playerHealth.maxHealth += 100;
+                        playerHealth.health += (playerHealth.maxHealth - playerHealth.health);
+                        Destroy(other.gameObject);
+                        break;
                     case TagManager.Pickups.Jump:
                         playerController.jumpPowerup = true;
+                        Destroy(other.gameObject);
+                        break;
+                    case TagManager.Pickups.StrongBullet:
+                        playerController.shotPowerup = true;
                         Destroy(other.gameObject);
                         break;
                     case TagManager.Pickups.SuperMissile:
@@ -59,6 +68,7 @@ public class PlayerCollisionListener : MonoBehaviour
                         {
                             playerController.superMissiles += playerController.superMissilePickupCount;
                         }
+                        Destroy(other.gameObject);
                         break;
                     default:
                         break;

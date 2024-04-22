@@ -22,4 +22,14 @@ public class MoveBlocked : MonoBehaviour
     {
         return rearBlocked.IsRearBlocked();
     }
+
+    public void SetFrontBlocked(bool isFrontBlocked)
+    {
+        frontBlocked.SetFrontBlocked(isFrontBlocked);
+    }
+
+    public void SetRearBlocked(bool isRearBlocked)
+    {
+        rearBlocked.SetRearBlocked(isRearBlocked);
+    }
 }

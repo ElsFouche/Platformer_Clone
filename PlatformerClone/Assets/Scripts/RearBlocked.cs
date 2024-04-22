@@ -17,4 +17,9 @@ public class RearBlocked : MonoBehaviour
     public bool IsRearBlocked() {
         return isRearBlocked;
     }
+
+    public void SetRearBlocked(bool rearBlocked)
+    {
+        isRearBlocked = rearBlocked;
+    }
 }
