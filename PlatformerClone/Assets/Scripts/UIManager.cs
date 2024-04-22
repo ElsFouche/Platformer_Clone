@@ -4,26 +4,35 @@ using TMPro;
 using UnityEngine;
 /*
  * Symon Belcher
- * 4/16/2024
+ * 4/22/2024
  * player UI
  */
 public class UIManager : MonoBehaviour
 {
     public TMP_Text healthText;
+    public TMP_Text missileText;
 
     public GameObject player;
 
     private PlayerHealth playerHealth;
+    private PlayerController missileCount;
 
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.Find("player");
+
+
         playerHealth = player.GetComponentInChildren<PlayerHealth>();
+        missileCount = player.GetComponentInChildren<PlayerController>();
     }
 
     // Update is called once per frame
     void Update()
     {
        healthText.text = "health: " + playerHealth.health;// counts lives
+
+     
+       missileText.text = "Super Missiles: "  + missileCount.superMissiles;// counts missles
     }
 }
