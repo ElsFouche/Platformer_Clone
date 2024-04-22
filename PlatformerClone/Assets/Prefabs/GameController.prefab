@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 7136884742796646741, guid: 0b7665b303d46f4479954c206fa7831e, type: 3}
   spawnPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 4440476515766608925, guid: 72dc9ba13a04fc94399248f2c6f44b56, type: 3}
+  - {fileID: 4575318523331505411, guid: 78fec97f004bbfc40818359db8e0ed15, type: 3}
+  - {fileID: 4575318523331505411, guid: 48d72fe5ca9c6f447a657ba66e5c94bd, type: 3}
+  - {fileID: 7949576777397651313, guid: 4374856709939f542857dea63e086734, type: 3}

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /* Author:      Els Fouche'
  * Last Update: 04/11/2024
@@ -13,8 +14,6 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     public GameObject player;
-    private EndScene sceneTransition;
-
     public GameObject[] spawnPoints;
 
     private void Start()
@@ -24,14 +23,15 @@ public class GameController : MonoBehaviour
 
     public void TeleportPlayer(int sceneIndex = -1)
     {
-        Debug.Log("Teleport destination: " + spawnPoints[sceneIndex].transform.position);
-        Debug.Log("Player location after teleport: " + player.transform.position);
 
         if (sceneIndex != -1)
         {
+        Debug.Log("Moving to level " + sceneIndex);
+        Debug.Log("Teleport destination: " + spawnPoints[sceneIndex].transform.position);
             player = GetTopParent(player);
-            sceneTransition.SwitchScene(sceneIndex);
             player.transform.position = spawnPoints[sceneIndex].transform.position;
+        Debug.Log("Player location after teleport: " + player.transform.position);
+            SceneManager.LoadScene(sceneIndex);
         }
     }
 

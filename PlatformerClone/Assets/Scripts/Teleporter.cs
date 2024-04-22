@@ -19,8 +19,9 @@ public class Teleporter : MonoBehaviour
 
             if (tags.tagType == TagManager.Tags.Player)
             {
-                Debug.Log(tags.tagType);
+                // Debug.Log(tags.tagType);
                 gameController.player = other.gameObject;
+                StartCoroutine("WaitToReactivate"); 
                 TeleportPlayerIf();
             }
         }
@@ -35,5 +36,12 @@ public class Teleporter : MonoBehaviour
         {
             gameController.TeleportPlayer(levelIndex);
         }
+    }
+
+    private IEnumerator WaitToReactivate()
+    {
+        gameObject.GetComponent<CapsuleCollider>().enabled = false;
+        yield return new WaitForSeconds(1.0f);
+        gameObject.GetComponent<CapsuleCollider>().enabled = true;
     }
 }

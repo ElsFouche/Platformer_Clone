@@ -175,9 +175,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9151522586203801529}
+  - component: {fileID: 1549616290500598805}
   - component: {fileID: 9115737695507614562}
   - component: {fileID: 3668307868683175623}
-  - component: {fileID: 1549616290500598805}
   m_Layer: 0
   m_Name: Teleporter
   m_TagString: Untagged
@@ -202,6 +202,21 @@ Transform:
   - {fileID: 3737015133469245617}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1549616290500598805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8502759672865052743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46dd180fc049afc44b61f16583b637bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameController: {fileID: 4315240655715926308, guid: 2f70ccff1ca89e249a4e8562b1f5e35d, type: 3}
+  teleportDestination: {fileID: 0}
+  levelIndex: -1
 --- !u!54 &9115737695507614562
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -252,18 +267,3 @@ CapsuleCollider:
   m_Height: 3.6728878
   m_Direction: 1
   m_Center: {x: 0, y: 0.021746159, z: 0}
---- !u!114 &1549616290500598805
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8502759672865052743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46dd180fc049afc44b61f16583b637bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameController: {fileID: 4315240655715926308, guid: 2f70ccff1ca89e249a4e8562b1f5e35d, type: 3}
-  teleportDestination: {fileID: 0}
-  levelIndex: 1
