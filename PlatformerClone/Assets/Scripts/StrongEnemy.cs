@@ -14,6 +14,11 @@ public class StrongEnemy : MonoBehaviour
     private Vector3 playerPos;
     private MoveBlocked moveBlocked;
 
+    private void Start()
+    {
+        playerTarget = GameObject.Find("player");
+    }
+
     void Awake()
     {
         InvokeRepeating("TrackPlayerPos", 0.0f, findPlayerDelay);

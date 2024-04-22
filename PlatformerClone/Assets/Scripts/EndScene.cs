@@ -4,15 +4,13 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 /*
- * Symon Belcher
- * 4/16/2024
- * end screen when player dies 
+ * Author:      Symon Belcher
+ * Last Update: 4/16/2024
+ * Notes:       end screen when player dies 
  */
 
     public class EndScene : MonoBehaviour
     {
-
-
         public void QuiteGame() // exits game
         {
 
@@ -26,4 +24,3 @@ using UnityEngine.SceneManagement;
         }
 
     }
-

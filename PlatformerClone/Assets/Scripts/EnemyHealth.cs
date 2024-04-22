@@ -3,13 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Android;
 
+/* Author:      Fouché, Els
+ * Last Update: 04/22/2024
+ * Notes:       This code handles enemy health values.
+ *              Enemies blink briefly when being shot to 
+ *              indicate they've been hit. When an enemy's
+ *              health drops to 0 or below, it is destroyed.
+ *              The script checks upon creation of the enemy
+ *              to make sure the health has been initialized to
+ *              a valid amount. 
+ */
 public class EnemyHealth : MonoBehaviour
 {
     public int health = 0;
     public float damagedBlinkSpeed = 0.25f;
     public float damagedBlinkTime = 1.0f;
 
-    // Start is called before the first frame update
+    /// <summary>
+    /// Checks immediately to see if the enemy has a valid health valu.
+    /// </summary>
     void Start()
     {
         if (health <= 0)
@@ -17,6 +29,10 @@ public class EnemyHealth : MonoBehaviour
             Debug.Log("Enemy health not set or is negative! Destroying.");
         }
     }
+
+    /// <summary>
+    /// If the enemy's health ever falls to 0 or below it is destroyed.
+    /// </summary>
     void Update()
     {
         if (health <= 0)
@@ -25,6 +41,13 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// If the enemy is hit by a bullet, any bullet, 
+    /// they begin blinking to indicate they've been hit. 
+    /// Enemy health values are manipulated directly by the
+    /// impacting bullet. 
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.GetComponent<TagManager>() != null)
@@ -38,6 +61,11 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// This code functions identically to the player's blink-on-damage
+    /// function set. 
+    /// </summary>
+    /// <returns></returns>
     public IEnumerator DamagedBlinking()
     {
         DamageBlink();
@@ -60,6 +88,10 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// This code functions identically to the player's blink-on-damage
+    /// function set. 
+    /// </summary>
     public void DamageBlink()
     {
         if (this.GetComponent<MeshRenderer>() != null)
@@ -75,6 +107,10 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Destroys the enemy. This probably doesn't need to be
+    /// its own function. 
+    /// </summary>
     private void EnemyDeath()
     {
         Destroy(gameObject);
