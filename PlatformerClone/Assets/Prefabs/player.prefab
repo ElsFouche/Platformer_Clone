@@ -757,7 +757,6 @@ GameObject:
   - component: {fileID: 4626262869198793789}
   - component: {fileID: 2501189774243347093}
   - component: {fileID: 799493272575396905}
-  - component: {fileID: 8752455827000774500}
   - component: {fileID: 4809995069072243981}
   m_Layer: 0
   m_Name: player
@@ -844,22 +843,6 @@ MonoBehaviour:
   jumpPowerup: 0
   shotPowerup: 0
   healthPowerup: 0
---- !u!114 &8752455827000774500
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7136884742796646741}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6e8c966f8d8e764f828f63785024455, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tagType: 1
-  bulletType: 0
-  enemyType: 0
-  pickupType: 0
 --- !u!54 &4809995069072243981
 Rigidbody:
   m_ObjectHideFlags: 0

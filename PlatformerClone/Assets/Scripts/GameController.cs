@@ -40,11 +40,11 @@ public class GameController : MonoBehaviour
 
         if (sceneIndex != -1)
         {
-        Debug.Log("Moving to level " + sceneIndex);
-        Debug.Log("Teleport destination: " + spawnPoints[sceneIndex].transform.position);
+            // Debug.Log("Moving to level " + sceneIndex);
+            // Debug.Log("Teleport destination: " + spawnPoints[sceneIndex].transform.position);
             player = GetTopParent(player);
             player.transform.position = spawnPoints[sceneIndex].transform.position;
-        Debug.Log("Player location after teleport: " + player.transform.position);
+            // Debug.Log("Player location after teleport: " + player.transform.position);
             SceneManager.LoadScene(sceneIndex);
         }
     }

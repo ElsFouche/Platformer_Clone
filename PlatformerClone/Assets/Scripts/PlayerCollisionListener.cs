@@ -2,6 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/* Author:      Fouché, Els
+ * Last Update: 04/22/2024
+ * Notes:       This script handles various collision detection
+ *              events for the player. It handles events where
+ *              the player is touched by an enemy and events 
+ *              when the player has touched a pickup. 
+ */
+
 public class PlayerCollisionListener : MonoBehaviour
 {
     private PlayerController playerController;
@@ -14,10 +22,11 @@ public class PlayerCollisionListener : MonoBehaviour
     }
 
     /// <summary>
-    /// This is the event handler for when the player collides with
-    /// other objects. 
-    /// If enemy, take damage. 
-    /// If health pickup, add health.
+    /// This is the event handler for when the player collides with other objects. 
+    /// If the player touches an enemy they take damage. 
+    /// If the player touches a powerup they permanently acquire that powerup.
+    /// If the player touches a health pickup their health increases by a
+    /// set amount or to their max health, whichever is lower. 
     /// </summary>
     /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
