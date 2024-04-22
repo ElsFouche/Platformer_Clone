@@ -5,12 +5,15 @@ using TMPro;
 using UnityEngine.SceneManagement;
 /*
  * Author:      Symon Belcher
- * Last Update: 4/16/2024
+ * Last Update: 4/22/2024
  * Notes:       end screen when player dies 
  */
 
     public class EndScene : MonoBehaviour
     {
+    /// <summary>
+    /// Switches scenes when Player dies, clicks restart, or play
+    /// </summary>
         public void QuiteGame() // exits game
         {
 

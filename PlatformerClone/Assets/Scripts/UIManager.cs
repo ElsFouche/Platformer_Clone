@@ -28,8 +28,9 @@ public class UIManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Update()   
     {
+       
        healthText.text = "health: " + playerHealth.health;// counts lives
 
      

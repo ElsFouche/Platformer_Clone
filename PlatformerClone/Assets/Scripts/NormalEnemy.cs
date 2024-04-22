@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 /*
  * Symon Belcher
- * 4/11/2024
+ * 4/22/2024
  * normal enemy controls, normal enemy will be killed after one hit
  */
 
 public class NormalEnemy : MonoBehaviour
 {
+    /// <summary>
+    /// Controls enemy movment, life, and movement limitations
+    /// </summary>
     public float speed;
 
     //stores game objects positioned to enemys lfet and right
@@ -33,6 +36,8 @@ public class NormalEnemy : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        
+        
         if (other.gameObject.GetComponent<TagManager>() != null)
         {
             TagManager otherTag = other.gameObject.GetComponent<TagManager>();
@@ -48,6 +53,7 @@ public class NormalEnemy : MonoBehaviour
 
     private void Move()
     {
+        //Controls Normal enenmy movement
         Vector3 moveDir;
 
         if (movingLeft)

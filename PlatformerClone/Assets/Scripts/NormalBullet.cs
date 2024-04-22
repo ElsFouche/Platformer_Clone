@@ -8,6 +8,9 @@ using UnityEngine;
  */
 public class NormalBullet : MonoBehaviour
 {
+    /// <summary>
+    /// Contorls bullets speed,damage and espawn rate, can be changed in inspector
+    /// </summary>
     public float speed = 15;
     public int damage = 1;
     public float despawnTime;
@@ -24,7 +27,7 @@ public class NormalBullet : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<TagManager>() != null)
+        if (other.gameObject.GetComponent<TagManager>() != null)// destroys bullet and does damage when bullet hits an enemy
         {
             TagManager tags = other.gameObject.GetComponent<TagManager>();
 
@@ -39,7 +42,7 @@ public class NormalBullet : MonoBehaviour
             }
         }
     }
-    private IEnumerator DespawnTimer(float time) // despawns the bullet
+    private IEnumerator DespawnTimer(float time) // despawns the bullet after a certain time
     {
 
         yield return new WaitForSeconds(time);
