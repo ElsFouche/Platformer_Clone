@@ -1035,6 +1035,7 @@ GameObject:
   - component: {fileID: 9141047331599004623}
   - component: {fileID: 6377750835230401293}
   - component: {fileID: 8137191397904895915}
+  - component: {fileID: 2388117177762512111}
   m_Layer: 0
   m_Name: JumpBox
   m_TagString: Untagged
@@ -1092,6 +1093,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isGrounded: 1
   coyoteTime: 0.1
+--- !u!65 &2388117177762512111
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8068479369989904238}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 55
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.18999875, y: 0.15, z: 1}
+  m_Center: {x: 0.4400006, y: 0.15, z: 0}
 --- !u!1 &8347814190074739030
 GameObject:
   m_ObjectHideFlags: 0

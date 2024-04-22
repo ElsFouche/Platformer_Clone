@@ -54,9 +54,12 @@ public class MoveController : MonoBehaviour
                 StartCoroutine("JumpDelay");
                 PlayerJump();
                 StartCoroutine("MinJumpTime");
+            } else
+            {
+                jumpController.CheckIfGrounded();
             }
-        }
-
+        } 
+        
         if (!Input.GetKey(KeyCode.W) && minJumpReached && !jumpController.isGrounded)
         {
             PlayerJumpDrag();

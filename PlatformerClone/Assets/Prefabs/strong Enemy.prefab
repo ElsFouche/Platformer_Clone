@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7231276572960649922}
   - component: {fileID: 5397795155525404144}
   m_Layer: 0
-  m_Name: StrongEnemy_hand1 (1)
+  m_Name: LeftBlocked
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -139,6 +139,7 @@ GameObject:
   - component: {fileID: 8592685384204873160}
   - component: {fileID: 5825545041755997935}
   - component: {fileID: 8120170767350177948}
+  - component: {fileID: 742388357025742523}
   m_Layer: 0
   m_Name: strong Enemy
   m_TagString: Untagged
@@ -408,6 +409,33 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.68979645, y: 0.43856332, z: 1}
   m_Center: {x: 0.00025367737, y: 0.7192816, z: 0}
+--- !u!54 &742388357025742523
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948976602865564215}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 120
+  m_CollisionDetection: 0
 --- !u!1 &2058744356361191269
 GameObject:
   m_ObjectHideFlags: 0
@@ -1169,7 +1197,7 @@ GameObject:
   - component: {fileID: 1688647237242113494}
   - component: {fileID: 7379022978189084569}
   m_Layer: 0
-  m_Name: StrongEnemy_hand1 (2)
+  m_Name: RightBlocked
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

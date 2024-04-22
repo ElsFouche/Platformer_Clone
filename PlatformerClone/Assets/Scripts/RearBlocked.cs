@@ -19,7 +19,8 @@ public class RearBlocked : MonoBehaviour
     /// platform layer) then their movement to the left is blocked.
     /// </summary>
     /// <param name="other"></param>
-    private void OnTriggerEnter(Collider other) {
+    private void OnTriggerEnter(Collider other) 
+    {
         isRearBlocked = true;
     }
 
@@ -28,7 +29,8 @@ public class RearBlocked : MonoBehaviour
     /// left is no longer blocked. 
     /// </summary>
     /// <param name="other"></param>
-    private void OnTriggerExit(Collider other) {
+    private void OnTriggerExit(Collider other) 
+    {
         isRearBlocked = false;
     }
 
@@ -37,7 +39,8 @@ public class RearBlocked : MonoBehaviour
     /// leftward movement is blocked or not. 
     /// </summary>
     /// <returns></returns>
-    public bool IsRearBlocked() {
+    public bool IsRearBlocked() 
+    {
         return isRearBlocked;
     }
 
