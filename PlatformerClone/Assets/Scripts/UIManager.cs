@@ -31,7 +31,7 @@ public class UIManager : MonoBehaviour
     void Update()   
     {
        
-       healthText.text = "health: " + playerHealth.health;// counts lives
+       healthText.text = "Health:   " + playerHealth.health;// counts lives
 
      
        missileText.text = "Super Missiles: "  + missileCount.superMissiles;// counts missles

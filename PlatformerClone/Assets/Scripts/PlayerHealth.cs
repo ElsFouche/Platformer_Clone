@@ -45,7 +45,9 @@ public class PlayerHealth : MonoBehaviour
     }
 
     /// <summary>
-    /// 
+    /// When called increases the player's health
+    /// by a set amount or to their max health, whichever
+    /// is lower. 
     /// </summary>
     public void HealthUp()
     {

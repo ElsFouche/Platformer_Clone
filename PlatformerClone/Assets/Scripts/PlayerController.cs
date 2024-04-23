@@ -4,7 +4,9 @@ using UnityEngine;
 
 /* Author:      Els Fouché & Symon Belcher
  * Last Update: 04/18/2024
- * Notes:       
+ * Notes:       This script allows the player to shoot. 
+ *              It also keeps track of which powerups the
+ *              player has access to. 
  */
 
 public class PlayerController : MonoBehaviour
@@ -26,12 +28,21 @@ public class PlayerController : MonoBehaviour
     public bool shotPowerup = false;
     public bool healthPowerup = false;
 
+    /// <summary>
+    /// The player remains persistant across levels.
+    /// We access the MoveController attached to the player. 
+    /// </summary>
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
         moveController = gameObject.GetComponent<MoveController>();
     }
 
+    /// <summary>
+    /// Handles checking for player input. If the player is 
+    /// attempting to shoot, fires the correct bullet based on
+    /// which powerups the player has. 
+    /// </summary>
     private void Update()
     {
         if (Input.GetKey(KeyCode.Space) && !hasShots)
@@ -57,6 +68,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Prevents the player from shooting. The player may
+    /// shoot every bulletDelay seconds. 
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator shootDelay()
     {
         hasShots = true;
@@ -64,6 +80,12 @@ public class PlayerController : MonoBehaviour
         hasShots = false;
     }
 
+    /// <summary>
+    /// Creates a bullet when called that moves across the screen.
+    /// The bullet is rotated to face the same direction as the player upon
+    /// creation. 
+    /// </summary>
+    /// <param name="bullet"></param>
     private void ShootBullet(GameObject bullet)
     {
         if (moveController.facingLeft)

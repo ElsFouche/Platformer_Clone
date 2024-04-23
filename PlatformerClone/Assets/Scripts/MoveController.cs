@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/* Author:      Els Fouche'
+ * Last Update: 04/22/2024
+ * Notes:       This script handles the player character's
+ *              movement abilities. 
+ */
+
 public class MoveController : MonoBehaviour
 {
     public int speed;
@@ -28,7 +34,7 @@ public class MoveController : MonoBehaviour
     }
 
     /// <summary>
-    /// This code assigns the components necessary for movement to variables. 
+    /// This code assigns the components necessary for movement to variables.
     /// </summary>
     void Start()
     {
@@ -44,6 +50,7 @@ public class MoveController : MonoBehaviour
     /// <summary>
     /// Movement code. Checks for key presses to determine player movement.
     /// Utilizes slerp to rotate player body to face movement direction. 
+    /// Several checks are included to fix incorrect player-blocked reporting.
     /// </summary>
     void Update()
     {
