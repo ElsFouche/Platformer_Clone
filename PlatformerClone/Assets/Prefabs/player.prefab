@@ -802,9 +802,9 @@ MonoBehaviour:
   speed: 10
   jumpForce: 10
   jumpPowerup: 3
-  dragForce: 0.02
-  jumpDelayTime: 0.4
-  minJumpTime: 0.2
+  dragForce: 0.07
+  jumpDelayTime: 0.1
+  minJumpTime: 0.1
   facingLeft: 0
   forwardCollider: {fileID: 6944050922484346125}
 --- !u!114 &2501189774243347093

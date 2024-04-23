@@ -38,13 +38,17 @@ public class GameController : MonoBehaviour
     public void TeleportPlayer(int sceneIndex = -1)
     {
 
-        if (sceneIndex != -1)
+        if (sceneIndex != -1 && sceneIndex < spawnPoints.Length - 1)
         {
             // Debug.Log("Moving to level " + sceneIndex);
             // Debug.Log("Teleport destination: " + spawnPoints[sceneIndex].transform.position);
             player = GetTopParent(player);
             player.transform.position = spawnPoints[sceneIndex].transform.position;
             // Debug.Log("Player location after teleport: " + player.transform.position);
+            SceneManager.LoadScene(sceneIndex);
+        } else
+        {
+            Destroy(GameObject.Find("player"));
             SceneManager.LoadScene(sceneIndex);
         }
     }

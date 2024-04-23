@@ -266,7 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c45db56d4a32e1d40bfd82b8c1a9f478, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 8
   playerTarget: {fileID: 7136884742796646741, guid: 0b7665b303d46f4479954c206fa7831e, type: 3}
   findPlayerDelay: 0.5
   rightBlocked: 0

@@ -40,7 +40,7 @@ public class PlayerHealth : MonoBehaviour
         if (health <= 0)
         {
             SceneManager.LoadScene(5);
-            gameObject.SetActive(false);
+            Destroy(gameObject.transform.parent.gameObject);
         }
     }
 

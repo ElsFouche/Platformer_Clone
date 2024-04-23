@@ -40,6 +40,9 @@ public class NormalBullet : MonoBehaviour
             {
                 Destroy(gameObject);
             }
+        } else
+        {
+            Destroy(gameObject);
         }
     }
     private IEnumerator DespawnTimer(float time) // despawns the bullet after a certain time

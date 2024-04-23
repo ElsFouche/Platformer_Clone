@@ -61,9 +61,16 @@ public class MoveController : MonoBehaviour
                 StartCoroutine("JumpDelay");
                 PlayerJump();
                 StartCoroutine("MinJumpTime");
-            } else
+            }
+            else if (!playerJumped)
             {
                 jumpController.CheckIfGrounded();
+                if (jumpController.isGrounded)
+                {
+                    StartCoroutine("JumpDelay");
+                    PlayerJump();
+                    StartCoroutine("MinJumpTime");
+                }
             }
         } 
         

@@ -34,6 +34,6 @@ public class UIManager : MonoBehaviour
        healthText.text = "Health:   " + playerHealth.health;// counts lives
 
      
-       missileText.text = "Super Missiles: "  + missileCount.superMissiles;// counts missles
+       missileText.text = "Missiles: "  + missileCount.superMissiles;// counts missles
     }
 }
