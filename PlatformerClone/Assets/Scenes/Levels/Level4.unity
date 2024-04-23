@@ -2904,7 +2904,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1549616290500598805, guid: 4f738881615cc3947867a30ef783166c, type: 3}
       propertyPath: levelIndex
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8502759672865052743, guid: 4f738881615cc3947867a30ef783166c, type: 3}
       propertyPath: m_Name
