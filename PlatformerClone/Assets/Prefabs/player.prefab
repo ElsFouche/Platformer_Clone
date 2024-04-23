@@ -802,7 +802,7 @@ MonoBehaviour:
   speed: 10
   jumpForce: 10
   jumpPowerup: 3
-  dragForce: 0.07
+  dragForce: 0.05
   jumpDelayTime: 0.1
   minJumpTime: 0.1
   facingLeft: 0
